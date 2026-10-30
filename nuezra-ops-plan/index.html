@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuezra Operating Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout: single reading column with a quiet sticky contents strip; tables carry the plan. */
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --text: #1a242e;
+  --muted: #566573;
+  --line: #d6dde4;
+  --accent: #0e6b77;
+  --accent-soft: #dcedef;
+  --display: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Source Sans 3", "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111920; --surface: #19232c; --text: #e4eaef; --muted: #9eafbc;
+    --line: #2a3843; --accent: #62c4cf; --accent-soft: #163239; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111920; --surface: #19232c; --text: #e4eaef; --muted: #9eafbc;
+  --line: #2a3843; --accent: #62c4cf; --accent-soft: #163239; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 80px; }
+header.top { padding: 44px 0 20px; border-bottom: 1px solid var(--line); }
+.eyebrow { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0 0 14px; text-wrap: balance; }
+.lede { font-size: 19px; max-width: 64ch; margin: 0 0 18px; }
+.meta { color: var(--muted); font-size: 15px; margin: 0; }
+.goal { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 8px; padding: 16px 20px; margin: 26px 0 0; max-width: 72ch; }
+.goal strong { font-family: var(--display); }
+.roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
+.roles li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.roles .code { display: inline-block; font-family: var(--display); font-weight: 800; background: var(--accent-soft); color: var(--accent); border-radius: 6px; padding: 1px 8px; margin-right: 8px; }
+.roles .who { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+nav.toc { border-bottom: 1px solid var(--line); padding: 14px 0; margin-bottom: 8px; }
+nav.toc ol { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; padding: 0; list-style: none; font-size: 14px; font-family: var(--display); font-weight: 600; }
+nav.toc a { text-decoration: none; color: var(--muted); }
+nav.toc a:hover { color: var(--accent); }
+h2 { font-family: var(--display); font-weight: 800; font-size: 27px; margin: 56px 0 14px; scroll-margin-top: 16px; text-wrap: balance; }
+h3 { font-family: var(--display); font-weight: 700; font-size: 20px; margin: 30px 0 10px; text-wrap: balance; }
+p, li { max-width: 72ch; }
+ol, ul { padding-left: 24px; }
+li + li { margin-top: 4px; }
+.tbl { overflow-x: auto; margin: 14px 0 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--display); font-weight: 700; font-size: 13.5px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); background: var(--bg); position: sticky; top: 0; }
+tbody tr:last-child td { border-bottom: none; }
+td { font-variant-numeric: tabular-nums; }
+td:first-child { font-weight: 600; }
+pre { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; overflow-x: auto; font-size: 14px; line-height: 1.5; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .92em; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+@media (max-width: 600px) { body { font-size: 16px; } header.top { padding-top: 28px; } th, td { padding: 8px 10px; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <p class="eyebrow">Nuezra Transportation</p>
+  <h1>Operating Plan: relaunch and run it remotely</h1>
+  <p class="lede">A single plan for resuming non-emergency medical transportation (NEMT) trips, hiring four drivers, standing up a remote dispatcher, and wiring the systems so the day runs without every task going through the owner.</p>
+  <p class="meta">Prepared October 30, 2026 for Ezra Warrington by DexTech Solutions. Phase dates run from November 2 to January 29.</p>
+  <div class="goal"><strong>Goal.</strong> By mid-December Nuezra runs trips 7 days a week, a remote dispatcher/admin runs the day, every system has one job, and Ezra oversees from a daily report instead of a phone that never stops.</div>
+  <ul class="roles">
+    <li><span class="code">E</span>Owner<span class="who">Ezra</span></li>
+    <li><span class="code">W</span>Dispatcher / Admin<span class="who">Waleed, remote (pending hire)</span></li>
+    <li><span class="code">S</span>Systems lead<span class="who">DexTech Solutions</span></li>
+    <li><span class="code">D</span>Drivers<span class="who">1 FT + 1 PT wheelchair, 2 FT ambulatory (own vehicle)</span></li>
+  </ul>
+</header>
+<nav class="toc" aria-label="Contents"><ol>
+<li><a href="#1-decisions-to-lock-first">Decisions to lock first</a></li>
+<li><a href="#2-phased-roadmap-with-owners-and-deadlines">Phased roadmap with owners and deadlines</a></li>
+<li><a href="#3-who-owns-what-accountability-map">Who owns what (accountability map)</a></li>
+<li><a href="#4-systems-map-where-information-lives">Systems map: where information lives</a></li>
+<li><a href="#5-role-charters">Role charters</a></li>
+<li><a href="#6-trip-lifecycle-a-to-z">Trip lifecycle A to Z</a></li>
+<li><a href="#7-standard-operating-procedures-to-write-v1-by-nov-13">Standard operating procedures to write (v1 by Nov&nbsp;13)</a></li>
+<li><a href="#8-how-progress-is-tracked">How progress is tracked</a></li>
+<li><a href="#9-hiring-plan-details">Hiring plan details</a></li>
+<li><a href="#10-hipaa-and-data-guardrails">HIPAA and data guardrails</a></li>
+<li><a href="#11-phone-line-design">Phone line design</a></li>
+<li><a href="#12-risks-and-how-the-plan-handles-them">Risks and how the plan handles them</a></li>
+<li><a href="#13-questions-for-ezra">Questions for Ezra</a></li>
+</ol></nav>
+<main>
+
+<h2 id="1-decisions-to-lock-first">1. Decisions to lock first</h2>
+<p>These change the plan below, so settle them in the first week. Suggested answers are included so nothing waits.</p>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Decision</th>
+<th>Suggested answer</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D1</td>
+<td>Which dispatch software</td>
+<td>Shortlist Bambi, RouteGenie, MediRoutes, TripMaster (CTS). Demo two, pick one by Nov&nbsp;6.</td>
+<td>Everything else (driver app, billing export, ETA lookups for the phone line) hangs off this.</td>
+</tr>
+<tr class="even">
+<td>D2</td>
+<td>"Bambi HR"</td>
+<td>Confirm: Bambi is NEMT dispatch software; BambooHR is HR software. Plan assumes BambooHR for HR and the dispatch pick from D1 for trips. If Ezra meant Bambi for dispatch, D1 is answered.</td>
+<td>Avoids buying the wrong tool.</td>
+</tr>
+<tr class="odd">
+<td>D3</td>
+<td>Own-vehicle drivers: W-2 or 1099</td>
+<td>Default to W-2 with mileage reimbursement unless a local employment attorney confirms 1099 holds up in Ezra's state. Most Medicaid brokers require credentialed drivers on the provider's roster either way.</td>
+<td>Misclassification is the most common legal exposure in NEMT.</td>
+</tr>
+<tr class="even">
+<td>D4</td>
+<td>Offshore access to patient data</td>
+<td>Check every broker contract and the state Medicaid provider agreement for offshore PHI restrictions before Waleed touches rider data. If restricted, Waleed works inside a US-hosted virtual desktop with no download rights, or his role is limited to non-PHI admin.</td>
+<td>HIPAA allows offshore workforce with safeguards, but many state Medicaid programs forbid it outright.</td>
+</tr>
+<tr class="odd">
+<td>D5</td>
+<td>Communication platform</td>
+<td>Google Workspace Business with signed BAA (or Microsoft 365 Business with BAA). Skip Slack: HIPAA coverage requires Enterprise Grid.</td>
+<td>One account per person, email, chat, Drive, and forms all under one BAA.</td>
+</tr>
+<tr class="even">
+<td>D6</td>
+<td>Phone platform</td>
+<td>Phase 1: RingCentral or Dialpad (both sign BAAs) with a menu. Phase 2: Twilio with a BAA and an AI voice agent connected to dispatch for ETAs.</td>
+<td>Gets a working line in days; AI comes after dispatch data exists to read from.</td>
+</tr>
+<tr class="odd">
+<td>D7</td>
+<td>Payer mix and market</td>
+<td>List the brokers (ModivCare, MTM, Verida, Access2Care, Alivi, etc.) and facility accounts Nuezra will serve.</td>
+<td>Determines credentialing steps, insurance minimums, and trip volume for staffing.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="2-phased-roadmap-with-owners-and-deadlines">2. Phased roadmap with owners and deadlines</h2>
+<p>Dates assume today is Fri Oct&nbsp;30, 2026. Compliance work is already in motion and due in a week.</p>
+<h3 id="phase-0-clear-to-operate-now-to-fri-nov-6-owner-e">Phase 0: Clear to operate (now to Fri Nov&nbsp;6). Owner: E</h3>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Owner</th>
+<th>Due</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Commercial auto policy bound (for-hire livery; typical broker minimum $1M to $1.5M combined single limit, confirm with each broker)</td>
+<td>E</td>
+<td>Nov&nbsp;4</td>
+<td>Certificate of insurance in hand, broker named as certificate holder</td>
+</tr>
+<tr class="even">
+<td>General liability, workers' comp, hired and non-owned auto (covers own-vehicle drivers) bound</td>
+<td>E</td>
+<td>Nov&nbsp;4</td>
+<td>Certificates filed in Drive &gt; Compliance</td>
+</tr>
+<tr class="odd">
+<td>State and local NEMT licensing / permits current</td>
+<td>E</td>
+<td>Nov&nbsp;6</td>
+<td>Permit numbers recorded in Compliance tracker</td>
+</tr>
+<tr class="even">
+<td>Van repairs complete, lift inspected, securement equipment checked</td>
+<td>E</td>
+<td>Nov&nbsp;6</td>
+<td>Signed inspection form, photos, odometer in Vehicle folder</td>
+</tr>
+<tr class="odd">
+<td>Broker provider requirements submitted (vehicle inspection, driver roster, background, drug test, training certificates)</td>
+<td>E</td>
+<td>Nov&nbsp;6</td>
+<td>Broker confirms active status in writing</td>
+</tr>
+<tr class="even">
+<td>Re-engage facility accounts (dialysis centers, SNFs, clinics) with relaunch date</td>
+<td>E</td>
+<td>Nov&nbsp;6</td>
+<td>Three accounts confirmed for standing orders</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="phase-1-build-the-back-office-nov-2-to-nov-13-owner-s-with-e-and-w">Phase 1: Build the back office (Nov&nbsp;2 to Nov&nbsp;13). Owner: S, with E and W</h3>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Owner</th>
+<th>Due</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Decisions D1 to D7 made</td>
+<td>E + S</td>
+<td>Nov&nbsp;6</td>
+<td>Written in this document</td>
+</tr>
+<tr class="even">
+<td>Google Workspace (or M365) set up, BAA signed, accounts for E, W, drivers; shared Drive structure created (see Section 4)</td>
+<td>S</td>
+<td>Nov&nbsp;6</td>
+<td>Everyone logs in with MFA; personal email no longer used for work</td>
+</tr>
+<tr class="odd">
+<td>Dispatch software purchased, configured: vehicles, levels of service, rate card, standing orders, driver app installed on Ezra's phone for testing</td>
+<td>S + E</td>
+<td>Nov&nbsp;11</td>
+<td>A test trip runs end to end: booked, assigned, completed, exported</td>
+</tr>
+<tr class="even">
+<td>Broker trip feed connected to dispatch (import or integration)</td>
+<td>S</td>
+<td>Nov&nbsp;13</td>
+<td>Tomorrow's broker trips appear in dispatch without retyping</td>
+</tr>
+<tr class="odd">
+<td>BambooHR set up: onboarding checklist, document storage, certification expiration reminders</td>
+<td>S</td>
+<td>Nov&nbsp;11</td>
+<td>A test hire completes onboarding in the portal</td>
+</tr>
+<tr class="even">
+<td>ADP payroll configured for W-2 drivers; QuickBooks Online chart of accounts and customers (brokers, facilities, private pay) set up; QBO to ADP mapping</td>
+<td>S + E</td>
+<td>Nov&nbsp;13</td>
+<td>A test payroll and a test invoice run</td>
+</tr>
+<tr class="odd">
+<td>Phone Phase 1 live: main number, menu (1 book a trip, 2 quote, 3 ETA, 4 driver line), hours, voicemail to dispatcher email, call recording policy</td>
+<td>S</td>
+<td>Nov&nbsp;11</td>
+<td>Test calls route to Waleed during hours and to on-call after hours</td>
+</tr>
+<tr class="even">
+<td>Waleed hired: contractor agreement with confidentiality and HIPAA terms, HIPAA training, role charter signed (Section 5), access provisioned</td>
+<td>E + S</td>
+<td>Nov&nbsp;9</td>
+<td>Waleed closes a test trip and submits a test EOD report</td>
+</tr>
+<tr class="odd">
+<td>Standard operating procedures drafted (Section 7)</td>
+<td>S, reviewed by E</td>
+<td>Nov&nbsp;13</td>
+<td>SOP folder has v1 of all seven documents</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="phase-2-hire-and-onboard-drivers-nov-2-to-nov-25-owner-e-with-w">Phase 2: Hire and onboard drivers (Nov&nbsp;2 to Nov&nbsp;25). Owner: E, with W</h3>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Owner</th>
+<th>Due</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Job posts live (Indeed, local Facebook groups, dialysis center bulletin boards, driver referral bonus)</td>
+<td>W drafts, E approves</td>
+<td>Nov&nbsp;4</td>
+<td>Posts live, applicant tracker in BambooHR</td>
+</tr>
+<tr class="even">
+<td>Screening calls and interviews (W screens, E interviews)</td>
+<td>W + E</td>
+<td>Rolling to Nov&nbsp;18</td>
+<td>6 to 8 interviews completed</td>
+</tr>
+<tr class="odd">
+<td>Offers: 1 FT wheelchair, 1 PT wheelchair, 2 FT ambulatory</td>
+<td>E</td>
+<td>Nov&nbsp;18</td>
+<td>Signed offers</td>
+</tr>
+<tr class="even">
+<td>Onboarding per checklist: MVR, background check, drug screen, CPR/First Aid, PASS or equivalent, defensive driving, HIPAA, wheelchair securement, vehicle inspection for own vehicles, insurance proof</td>
+<td>W tracks, E verifies</td>
+<td>Nov&nbsp;25</td>
+<td>Every item green in BambooHR; driver added to broker roster</td>
+</tr>
+<tr class="odd">
+<td>Ride-alongs and driver app training</td>
+<td>E</td>
+<td>Nov&nbsp;25</td>
+<td>Driver completes two supervised trips</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="phase-3-relaunch-mon-nov-16-soft-launch-mon-dec-14-full-7-day-schedule">Phase 3: Relaunch (Mon Nov&nbsp;16 soft launch; Mon Dec&nbsp;14 full 7-day schedule)</h3>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Owner</th>
+<th>Due</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Soft launch, 5 days a week, van plus first available driver, Ezra as backup driver</td>
+<td>E + W</td>
+<td>Nov&nbsp;16</td>
+<td>Week of trips completed with EOD reports</td>
+</tr>
+<tr class="even">
+<td>First billing cycle submitted (broker claims and private invoices)</td>
+<td>W, E reviews</td>
+<td>Nov&nbsp;23</td>
+<td>All completed trips billed within 48 hours</td>
+</tr>
+<tr class="odd">
+<td>Weekend shifts start as drivers clear onboarding</td>
+<td>W schedules</td>
+<td>Dec&nbsp;5</td>
+<td>Saturday trips run</td>
+</tr>
+<tr class="even">
+<td>Full 7-day operation, all four drivers active, on-call rotation published</td>
+<td>E</td>
+<td>Dec&nbsp;14</td>
+<td>Two consecutive weeks of 7-day service</td>
+</tr>
+<tr class="odd">
+<td>Phase 3 review: what broke, what to fix</td>
+<td>E + S + W</td>
+<td>Dec&nbsp;18</td>
+<td>Fix list in tracker</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="phase-4-make-it-run-without-ezra-dec-14-to-jan-29-2027-owner-s-and-w">Phase 4: Make it run without Ezra (Dec&nbsp;14 to Jan&nbsp;29, 2027). Owner: S and W</h3>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Owner</th>
+<th>Due</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Weekly KPI dashboard from dispatch export (on-time %, trips, cancels, revenue per trip, AR aging)</td>
+<td>S</td>
+<td>Dec&nbsp;23</td>
+<td>Ezra reads it Monday mornings</td>
+</tr>
+<tr class="even">
+<td>Phone Phase 2: AI voice agent on Twilio (BAA) answers, routes quote calls to Waleed, reads ETAs from dispatch, takes after-hours bookings</td>
+<td>S</td>
+<td>Jan&nbsp;15</td>
+<td>80% of ETA calls resolved without a human</td>
+</tr>
+<tr class="odd">
+<td>Second part-time dispatcher or on-call backup so Waleed is not a single point of failure</td>
+<td>E</td>
+<td>Jan&nbsp;29</td>
+<td>Coverage calendar has no gaps</td>
+</tr>
+<tr class="even">
+<td>Quarterly compliance calendar (insurance renewals, certs, vehicle inspections, broker re-credentialing)</td>
+<td>W</td>
+<td>Jan&nbsp;15</td>
+<td>Reminders firing from BambooHR and Google Calendar</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="3-who-owns-what-accountability-map">3. Who owns what (accountability map)</h2>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>Owner</th>
+<th>Backup</th>
+<th>Reviewed by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trip intake, scheduling, dispatch, day-of monitoring</td>
+<td>W</td>
+<td>E</td>
+<td>E (daily EOD)</td>
+</tr>
+<tr class="even">
+<td>Driver hiring pipeline and onboarding paperwork</td>
+<td>W</td>
+<td>E</td>
+<td>E (weekly)</td>
+</tr>
+<tr class="odd">
+<td>Driver interviews, offers, discipline, termination</td>
+<td>E</td>
+<td>none</td>
+<td>n/a</td>
+</tr>
+<tr class="even">
+<td>Compliance tracker (insurance, licenses, certifications, vehicle inspections)</td>
+<td>W</td>
+<td>S</td>
+<td>E (monthly)</td>
+</tr>
+<tr class="odd">
+<td>Billing submission, remittance posting, denial rework</td>
+<td>W</td>
+<td>E</td>
+<td>E (weekly AR review)</td>
+</tr>
+<tr class="even">
+<td>Payroll run (ADP)</td>
+<td>E</td>
+<td>S</td>
+<td>QBO reconciliation monthly</td>
+</tr>
+<tr class="odd">
+<td>Bookkeeping (QBO), bank reconciliation</td>
+<td>E (or bookkeeper)</td>
+<td>S</td>
+<td>Monthly P&amp;L</td>
+</tr>
+<tr class="even">
+<td>Systems, integrations, phone line, access control</td>
+<td>S</td>
+<td>E</td>
+<td>Quarterly access audit</td>
+</tr>
+<tr class="odd">
+<td>Safety, incidents, accidents</td>
+<td>E</td>
+<td>W (intake)</td>
+<td>Incident log reviewed monthly</td>
+</tr>
+<tr class="even">
+<td>Customer and facility relationships</td>
+<td>E</td>
+<td>W</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rule: every task in the tracker has exactly one owner. A backup can act, but the owner reports.</p>
+<hr />
+<h2 id="4-systems-map-where-information-lives">4. Systems map: where information lives</h2>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Information</th>
+<th>System of record</th>
+<th>Who writes</th>
+<th>Who reads</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Riders, trips, authorizations, driver status, GPS, signatures, timestamps</td>
+<td>Dispatch software (D1)</td>
+<td>W, D (via app)</td>
+<td>E, S</td>
+<td>The only place rider PHI lives. Must have a BAA.</td>
+</tr>
+<tr class="even">
+<td>Broker trip assignments</td>
+<td>Broker portal → dispatch import</td>
+<td>W</td>
+<td>W</td>
+<td>Never re-key; import or integrate.</td>
+</tr>
+<tr class="odd">
+<td>Employee files, onboarding checklist, certifications and expirations, PTO, policies acknowledgments</td>
+<td>BambooHR</td>
+<td>W, D</td>
+<td>E</td>
+<td>Expiration reminders 60/30/7 days out.</td>
+</tr>
+<tr class="even">
+<td>Hours, pay rates, payroll, tax filings</td>
+<td>ADP</td>
+<td>E (W preps hours from dispatch export)</td>
+<td>E</td>
+<td>Export approved hours from dispatch, import to ADP.</td>
+</tr>
+<tr class="odd">
+<td>Invoices, payments received, bills, bank, P&amp;L</td>
+<td>QuickBooks Online</td>
+<td>W (invoices), E (bills, reconciliation)</td>
+<td>E</td>
+<td>No rider names on invoices; use trip IDs and dates. QBO has no BAA.</td>
+</tr>
+<tr class="even">
+<td>Broker claims and remittances</td>
+<td>Broker portal (or clearinghouse)</td>
+<td>W</td>
+<td>E</td>
+<td>Post remittance totals to QBO weekly.</td>
+</tr>
+<tr class="odd">
+<td>Email, chat, calendar, documents, forms</td>
+<td>Google Workspace (BAA)</td>
+<td>All</td>
+<td>All</td>
+<td>Internal chat is Google Chat; drivers get a Nuezra account.</td>
+</tr>
+<tr class="even">
+<td>Vehicle inspections (pre and post trip), lift checks, incident reports</td>
+<td>Dispatch driver app if supported; otherwise Google Form → Drive</td>
+<td>D</td>
+<td>W, E</td>
+<td>Photos required for damage and no-shows.</td>
+</tr>
+<tr class="odd">
+<td>SOPs, checklists, rate card, org chart</td>
+<td>Google Drive &gt; Operations</td>
+<td>S, E</td>
+<td>All</td>
+<td>Versioned; one current copy each.</td>
+</tr>
+<tr class="even">
+<td>Phone calls, voicemail, call recordings</td>
+<td>RingCentral/Dialpad (Phase 1), Twilio (Phase 2)</td>
+<td>n/a</td>
+<td>W, E</td>
+<td>Recording disclosure on greeting.</td>
+</tr>
+<tr class="odd">
+<td>Tasks, deadlines, project progress</td>
+<td>Google Sheets tracker (nuezra-task-tracker.csv) or Trello</td>
+<td>All</td>
+<td>E weekly</td>
+<td>Keep it to one board.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Shared Drive structure:</p>
+<pre><code>Nuezra Shared Drive
+├── 01 Compliance        (insurance certificates, permits, broker agreements, BAAs)
+├── 02 Operations        (SOPs, rate card, shift templates, on-call calendar)
+├── 03 Drivers           (public: handbook, training; private files stay in BambooHR)
+├── 04 Vehicles          (per-vehicle folder: registration, inspections, repairs, photos)
+├── 05 Billing           (remittance PDFs, denial logs, private-pay invoices export)
+├── 06 Reports           (EOD reports by date, weekly KPI, monthly P&amp;L)
+└── 07 Incidents         (restricted to E and W)</code></pre>
+<p>Information rules everyone follows:</p>
+<ol type="1">
+<li>Rider names and health details go in the dispatch system only. Not in chat, text, email, or QuickBooks.</li>
+<li>Drivers communicate trip changes through the driver app. Text messages are for "running late, call me" only.</li>
+<li>If it is not in the tracker, it is not a task.</li>
+<li>Every document has one owner and one current version in Drive.</li>
+</ol>
+<hr />
+<h2 id="5-role-charters">5. Role charters</h2>
+<h3 id="dispatcher--administrative-assistant-waleed">Dispatcher / Administrative Assistant (Waleed)</h3>
+<p>Hours: Mon to Fri 5:00 am to 2:00 pm ET (3:00 pm to 12:00 am Pakistan time), plus Saturday 5:00 am to 10:00 am ET. Sunday and evenings covered by the on-call rotation until a second dispatcher is hired.</p>
+<p>Daily responsibilities, in order:</p>
+<ol type="1">
+<li>5:00 am: confirm every driver has checked in and completed pre-trip inspection. Call any driver not checked in by 5:15.</li>
+<li>Monitor live board. Act on any trip running more than 10 minutes behind: call rider, update ETA, reassign if needed.</li>
+<li>Answer the main line and dispatch line. Book trips, give quotes from the rate card, read ETAs from the board.</li>
+<li>Handle will-call return trips and no-shows per SOP.</li>
+<li>Import tomorrow's broker trips by 12:00 pm. Build routes and assign drivers by 2:00 pm. Flag unassigned trips to Ezra by 2:00 pm.</li>
+<li>Send rider reminder calls or texts for tomorrow (automated where the dispatch system supports it).</li>
+<li>Reconcile today's completed trips against authorizations. Submit claims for yesterday's trips. Create private-pay invoices in QBO.</li>
+<li>Update the compliance tracker and onboarding checklists; chase expiring items.</li>
+<li>Send the End of Day report by 2:00 pm ET (template in Section 8).</li>
+</ol>
+<p>Weekly: Monday AR aging export from QBO and broker portals; Wednesday hiring pipeline update; Friday next-week driver schedule published.</p>
+<p>Accountability measures: EOD report sent every working day; unassigned-trip rate under 2% at 2:00 pm cutoff; claims submitted within 48 hours of trip completion; zero PHI outside the dispatch system (audited by S quarterly).</p>
+<p>Not allowed: hiring or firing decisions, changing pay rates, approving refunds over $50, deleting trips, exporting rider data outside the dispatch system.</p>
+<h3 id="owner-ezra">Owner (Ezra)</h3>
+<p>Daily: read the EOD report (10 minutes). Respond to flagged items only. Weekly: Monday 30-minute ops review with W and S (KPIs, AR, hiring, fix list). Approve payroll hours. Monthly: P&amp;L review, compliance tracker review, incident log review, one ride-along or vehicle check. Always: driver hiring and termination, customer escalations, incidents and accidents, insurance and broker relationships.</p>
+<h3 id="systems-lead-dextech">Systems lead (DexTech)</h3>
+<p>Owns the tool stack, integrations, access provisioning and removal, the KPI dashboard, the phone system, and the quarterly access audit. On call for system outages. Does not touch rider data except to troubleshoot with Ezra's approval.</p>
+<h3 id="drivers">Drivers</h3>
+<p>Clock in through the driver app; complete pre-trip inspection before the first pickup and post-trip at end of shift; update every trip status in real time (en route, arrived, rider on board, completed) with signature or photo; follow the no-show and securement SOPs; report incidents within one hour; keep certifications current (BambooHR reminds, driver acts).</p>
+<p>Own-vehicle drivers additionally: keep registration, insurance, and state inspection current and uploaded; vehicle must pass the Nuezra vehicle checklist (4 doors, working AC/heat, clean, no warning lights, first-aid kit, vehicle no older than the broker's limit); submit mileage weekly through the dispatch export.</p>
+<hr />
+<h2 id="6-trip-lifecycle-a-to-z">6. Trip lifecycle A to Z</h2>
+<p>Each step lists who acts, where it happens, and what "done" means. This is the process Waleed runs and the AI phone line eventually feeds.</p>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>What happens</th>
+<th>Who</th>
+<th>System</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A. Intake</td>
+<td>Trip request arrives from a broker feed, facility call or fax, rider phone call (menu option 1), or web form</td>
+<td>W</td>
+<td>Dispatch (broker import), phone, Google Form</td>
+<td>Trip record exists with rider, pickup, drop-off, appointment time, level of service (ambulatory or wheelchair), mobility aids, escort, recurring pattern, payer, notes</td>
+</tr>
+<tr class="even">
+<td>B. Verify and price</td>
+<td>Broker trips: confirm authorization number and level of service match. Private pay: quote from rate card (base + per-mile + wheelchair surcharge + wait time + after-hours), collect payment method</td>
+<td>W</td>
+<td>Dispatch, rate card</td>
+<td>Trip marked verified; private-pay trips have payment on file or deposit</td>
+</tr>
+<tr class="odd">
+<td>C. Schedule</td>
+<td>Enter one-time trip or create a standing order (dialysis Mon/Wed/Fri, etc.) with pickup window calculated from appointment time</td>
+<td>W</td>
+<td>Dispatch</td>
+<td>Trip appears on the correct date with a pickup window</td>
+</tr>
+<tr class="even">
+<td>D. Plan and assign (day before)</td>
+<td>By 12:00 pm import tomorrow's broker trips; by 2:00 pm build routes and assign by level of service, vehicle, shift, and geography. Unassigned trips escalated to E</td>
+<td>W</td>
+<td>Dispatch auto-routing</td>
+<td>Every trip has a driver; manifests pushed to driver apps</td>
+</tr>
+<tr class="odd">
+<td>E. Confirm</td>
+<td>Reminder call or text to rider the evening before (name and time only, no medical details). Facility confirmations for standing orders weekly</td>
+<td>W or automated</td>
+<td>Dispatch reminders, phone</td>
+<td>Reminder log shows sent</td>
+</tr>
+<tr class="even">
+<td>F. Driver start of day</td>
+<td>Driver clocks in, completes pre-trip inspection (tires, lights, lift cycle, securements, cleanliness, fuel), reviews manifest</td>
+<td>D</td>
+<td>Driver app</td>
+<td>Inspection submitted before first pickup; W sees green on the board</td>
+</tr>
+<tr class="odd">
+<td>G. Execute each trip</td>
+<td>Statuses in real time: en route → arrived → rider on board → dropped off. Capture GPS timestamps, odometer, signature or photo at drop-off. Wheelchair trips: four-point securement plus lap and shoulder belt before moving</td>
+<td>D</td>
+<td>Driver app</td>
+<td>Trip shows Completed with timestamps and signature</td>
+</tr>
+<tr class="even">
+<td>H. Monitor</td>
+<td>W watches the live board; calls riders when a driver is 10+ minutes behind; reassigns when needed; answers ETA calls (menu option 3) from the board</td>
+<td>W</td>
+<td>Dispatch live board, phone</td>
+<td>No trip goes past the pickup window without a rider call logged</td>
+</tr>
+<tr class="odd">
+<td>I. Exceptions</td>
+<td>No-show: driver waits the required time (typically 10 to 15 minutes, per broker rule), calls rider, calls W, takes a geotagged photo, W marks no-show with notes. Breakdown: driver calls W, W reassigns and calls rider, E notified. Incident or accident: driver secures the scene, calls 911 if needed, calls E, completes incident form within one hour</td>
+<td>D, W, E</td>
+<td>Driver app, incident form, phone</td>
+<td>Exception documented in the trip record; incident form filed in 07 Incidents</td>
+</tr>
+<tr class="even">
+<td>J. Will-call returns</td>
+<td>Rider or facility calls when ready (menu option 1). W assigns nearest eligible driver and gives ETA</td>
+<td>W</td>
+<td>Dispatch, phone</td>
+<td>Return trip assigned within 5 minutes of the call</td>
+</tr>
+<tr class="odd">
+<td>K. Driver end of day</td>
+<td>Post-trip inspection, fuel level, any damage photos, clock out</td>
+<td>D</td>
+<td>Driver app</td>
+<td>Post-trip submitted; W confirms all trips closed</td>
+</tr>
+<tr class="even">
+<td>L. Reconcile (same day)</td>
+<td>W reviews every trip: completed vs. authorized, mileage reasonableness, missing signatures, no-show documentation. Fixes before billing</td>
+<td>W</td>
+<td>Dispatch</td>
+<td>Daily reconciliation marked complete in EOD report</td>
+</tr>
+<tr class="odd">
+<td>M. Bill (within 48 hours)</td>
+<td>Broker trips submitted through the broker portal or clearinghouse with required fields. Facility and private-pay trips invoiced from QBO using trip ID and date, no rider name</td>
+<td>W</td>
+<td>Broker portal, QBO</td>
+<td>Claims accepted; invoices sent; both logged in 05 Billing</td>
+</tr>
+<tr class="even">
+<td>N. Collect</td>
+<td>Weekly: post remittances to QBO, work denials within 7 days of notice, chase private-pay balances at 15 and 30 days. Monthly AR aging to E</td>
+<td>W, E</td>
+<td>Broker portals, QBO</td>
+<td>AR over 45 days under 10% of total</td>
+</tr>
+<tr class="odd">
+<td>O. Pay</td>
+<td>Approved hours and mileage exported from dispatch each pay period; E approves; ADP runs payroll; QBO records the payroll expense</td>
+<td>W preps, E approves</td>
+<td>Dispatch export, ADP, QBO</td>
+<td>Payroll on time every cycle; mileage reimbursement itemized</td>
+</tr>
+<tr class="even">
+<td>P. Report</td>
+<td>EOD report daily; weekly KPI dashboard Monday; monthly P&amp;L and compliance review</td>
+<td>W, S, E</td>
+<td>Google Sheets, Drive 06 Reports</td>
+<td>E can describe yesterday without calling anyone</td>
+</tr>
+</tbody>
+</table></div>
+<p>Service levels the process is built to hit: pickup within the window on 95% of trips; no unassigned trips at 2:00 pm the day before; claims out within 48 hours; every exception documented the same day.</p>
+<hr />
+<h2 id="7-standard-operating-procedures-to-write-v1-by-nov-13">7. Standard operating procedures to write (v1 by Nov&nbsp;13)</h2>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>SOP</th>
+<th>Contents</th>
+<th>Owner</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Driver onboarding checklist</td>
+<td>Application, interview, offer, MVR (3-year clean, no DUI), background check, drug screen, CPR/First Aid, PASS or equivalent passenger assistance training, defensive driving, HIPAA training, wheelchair securement sign-off, driver app training, two ride-alongs, broker roster submission, uniform and ID</td>
+<td>W</td>
+<td>W, E</td>
+</tr>
+<tr class="even">
+<td>Certification and compliance tracker</td>
+<td>Item, holder, issue date, expiration, reminder dates (60/30/7), status. Covers driver licenses, certifications, vehicle registration, insurance, inspections, business permits, broker credentialing</td>
+<td>W</td>
+<td>W, E</td>
+</tr>
+<tr class="odd">
+<td>Vehicle inspection (pre-trip and post-trip)</td>
+<td>Daily checklist with photos; lift function test; securement count; monthly deep inspection; repair request path</td>
+<td>E</td>
+<td>D, W</td>
+</tr>
+<tr class="even">
+<td>Safety and securement</td>
+<td>Four-point tie-down and occupant restraint procedure; lift operation; transfer assistance limits; weather and road policy; cell phone policy</td>
+<td>E</td>
+<td>D</td>
+</tr>
+<tr class="odd">
+<td>Incident, accident, and no-show procedure</td>
+<td>Who to call in what order, forms, photo requirements, broker notification deadlines, rider complaint handling</td>
+<td>E</td>
+<td>D, W</td>
+</tr>
+<tr class="even">
+<td>Dispatch daily runbook</td>
+<td>The hour-by-hour list in Section 5 plus escalation rules and phone scripts (booking, quote, ETA)</td>
+<td>W, S</td>
+<td>W, backup dispatcher</td>
+</tr>
+<tr class="odd">
+<td>Billing and payment tracking</td>
+<td>Reconciliation steps, claim submission per broker, invoice template, denial workflow, remittance posting, AR follow-up cadence, payroll prep</td>
+<td>S, W</td>
+<td>W, E</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="8-how-progress-is-tracked">8. How progress is tracked</h2>
+<p><strong>Project tracker:</strong> the task list in <code>nuezra-task-tracker.csv</code> imported to a Google Sheet (or Trello). Columns: phase, task, owner, due, status, done-when, notes. Reviewed Monday.</p>
+<p><strong>Daily End of Day report (W sends by 2:00 pm ET):</strong></p>
+<pre><code>Nuezra EOD — &lt;date&gt;
+Trips scheduled / completed / no-show / cancelled: __ / __ / __ / __
+On-time pickups: __%   Late trips (with reason): ...
+Tomorrow: __ trips, __ assigned, __ unassigned (names of drivers short)
+Billing: __ claims submitted, __ invoices sent, __ denials to work
+Vehicles: issues reported ...
+People: onboarding items due this week ..., certs expiring in 30 days ...
+Needs Ezra: (only items requiring a decision)</code></pre>
+<p><strong>Weekly KPIs (dashboard, Monday):</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>KPI</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>On-time pickup rate</td>
+<td>95% or better</td>
+</tr>
+<tr class="even">
+<td>Trips completed per driver per day</td>
+<td>Baseline in week 2, then +10%</td>
+</tr>
+<tr class="odd">
+<td>Cancellation and no-show rate</td>
+<td>Under 10%</td>
+</tr>
+<tr class="even">
+<td>Unassigned trips at 2:00 pm cutoff</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Claims submitted within 48 hours</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>Denial rate</td>
+<td>Under 5%</td>
+</tr>
+<tr class="odd">
+<td>AR over 45 days</td>
+<td>Under 10% of AR</td>
+</tr>
+<tr class="even">
+<td>Revenue per trip and per vehicle-day</td>
+<td>Tracked monthly</td>
+</tr>
+<tr class="odd">
+<td>Incidents</td>
+<td>0; each one reviewed</td>
+</tr>
+<tr class="even">
+<td>Certifications expired</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Meeting cadence:</strong> daily EOD (async), Monday 30-minute ops review (E, W, S), monthly 60-minute business review (P&amp;L, compliance, incidents, hiring).</p>
+<hr />
+<h2 id="9-hiring-plan-details">9. Hiring plan details</h2>
+<p>Openings: 1 full-time wheelchair van driver, 1 part-time wheelchair van driver (weekends and PTO cover), 2 full-time ambulatory drivers using their own vehicles.</p>
+<p>Minimum requirements (adjust to broker and insurer rules): age 21 or older (25 preferred by most insurers), valid license 3+ years, clean 3-year MVR, pass background and drug screen, able to lift 50 lbs and assist riders, smartphone for the driver app, CPR/First Aid and passenger assistance training completed before first solo trip (Nuezra can sponsor). Own-vehicle drivers: 4-door vehicle within the broker's age limit, current registration, inspection, and insurance; must pass Nuezra's vehicle checklist.</p>
+<p>Suggested 7-day coverage:</p>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Schedule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FT wheelchair</td>
+<td>Mon to Fri, 5:30 am to 2:00 pm</td>
+</tr>
+<tr class="even">
+<td>PT wheelchair</td>
+<td>Sat and Sun, 6:00 am to 4:00 pm; covers FT PTO</td>
+</tr>
+<tr class="odd">
+<td>FT ambulatory A</td>
+<td>Mon to Fri</td>
+</tr>
+<tr class="even">
+<td>FT ambulatory B</td>
+<td>Wed to Sun</td>
+</tr>
+<tr class="odd">
+<td>Dispatch</td>
+<td>W Mon to Sat mornings; on-call rotation for Sun and evenings</td>
+</tr>
+</tbody>
+</table></div>
+<p>Interview focus: reliability history, how they handle a rider who is not ready, a wheelchair securement walkthrough, comfort with a phone app, availability for early mornings and weekends.</p>
+<p>Sourcing: Indeed, local Facebook job groups, flyers at dialysis centers and senior centers, referral bonus paid after 90 days.</p>
+<hr />
+<h2 id="10-hipaa-and-data-guardrails">10. HIPAA and data guardrails</h2>
+<ol type="1">
+<li>Sign a BAA with every vendor that touches rider data: dispatch software, Google Workspace or Microsoft 365, phone provider, any form tool. QuickBooks and ADP get no rider data.</li>
+<li>One account per person, MFA on everything, no shared logins. S removes access the day someone leaves.</li>
+<li>Waleed: contractor agreement with confidentiality and HIPAA obligations, documented HIPAA training, least-privilege role in dispatch (no bulk export), company-managed browser profile. If any payer prohibits offshore access (D4), use a US-hosted virtual desktop or restrict his role.</li>
+<li>Drivers see only their own manifest. No screenshots of the board in group chats.</li>
+<li>Rider reminders carry name, date, and time only.</li>
+<li>Incident reports and complaints live in the restricted 07 Incidents folder.</li>
+<li>Quarterly access audit by S; annual HIPAA refresher for everyone.</li>
+</ol>
+<hr />
+<h2 id="11-phone-line-design">11. Phone line design</h2>
+<p><strong>Phase 1 (by Nov&nbsp;11):</strong> one published number on RingCentral or Dialpad with a BAA. Greeting states calls are recorded. Menu: 1 book or change a trip (rings W), 2 get a quote (rings W, voicemail after hours), 3 check an ETA (rings W), 4 drivers (rings W, then on-call). After hours: on-call phone, then voicemail transcribed to the dispatch inbox.</p>
+<p><strong>Phase 2 (by Jan&nbsp;15):</strong> Twilio under a BAA running an AI voice agent. It verifies the caller with name and date of birth or trip confirmation, reads the live ETA from the dispatch system through its API, takes new booking details and creates a pending trip for W to verify, and transfers quote requests to W (or texts a callback link after hours). Every call is logged with a transcript in a HIPAA-covered store. Humans stay one button away at every step.</p>
+<hr />
+<h2 id="12-risks-and-how-the-plan-handles-them">12. Risks and how the plan handles them</h2>
+<div class="tbl"><table>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Waleed is a single point of failure</td>
+<td>On-call rotation now; second part-time dispatcher by Jan&nbsp;29; runbook so a backup can cover in a day</td>
+</tr>
+<tr class="even">
+<td>Offshore PHI restriction in a contract</td>
+<td>D4 check before go-live; virtual desktop fallback</td>
+</tr>
+<tr class="odd">
+<td>Own-vehicle drivers misclassified</td>
+<td>D3 attorney check; default to W-2; hired and non-owned auto coverage regardless</td>
+</tr>
+<tr class="even">
+<td>Driver certifications lapse</td>
+<td>BambooHR reminders at 60/30/7 days; expired cert means no trips assigned</td>
+</tr>
+<tr class="odd">
+<td>Billing falls behind during relaunch</td>
+<td>48-hour rule in Waleed's daily list; E reviews AR weekly</td>
+</tr>
+<tr class="even">
+<td>Too few trips for four drivers in week one</td>
+<td>Soft launch with one or two drivers; add shifts as standing orders are confirmed</td>
+</tr>
+<tr class="odd">
+<td>Buying tools that do not talk to each other</td>
+<td>D1 selection criteria require broker import, driver app, billing export, and an API</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="13-questions-for-ezra">13. Questions for Ezra</h2>
+<p>Answers to these tighten the plan; nothing above is blocked waiting on them.</p>
+<ol type="1">
+<li>Which state and counties will Nuezra serve, and which brokers or facilities are the main trip sources?</li>
+<li>Did "Bambi HR" mean Bambi (dispatch software) or BambooHR (HR software)?</li>
+<li>Are the ambulatory drivers intended as W-2 employees or 1099 contractors? Has an attorney weighed in?</li>
+<li>How many vans are in the fleet now, and is a second wheelchair vehicle planned?</li>
+<li>Is there an existing business phone number and provider to port?</li>
+<li>What are Waleed's agreed hours and pay structure, and has he done HIPAA training before?</li>
+<li>Monthly budget range for software (dispatch, HR, phone, Workspace)?</li>
+<li>Private-pay rate card: does one exist, or should we build it?</li>
+</ol>
+
+</main>
+<footer>Companion files: Nuezra-Operating-Plan.md (this document) and nuezra-task-tracker.csv (import into Google Sheets or Trello). Dates assume compliance work finishes the week of November 2; shift everything by the same number of days if it slips.</footer>
+</div>
+</body>
+</html>
