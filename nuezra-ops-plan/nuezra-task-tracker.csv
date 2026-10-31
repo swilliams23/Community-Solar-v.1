@@ -7,13 +7,14 @@ Phase,Task,Owner,Due,Status,Done when,Notes
 0 Clear to operate,Re-engage facility accounts with relaunch date,Ezra,2026-11-06,Not started,Three accounts confirmed for standing orders,
 1 Back office,Make decisions D1 to D7,Ezra + DexTech,2026-11-06,Not started,Recorded in operating plan,
 1 Back office,Google Workspace set up with BAA; accounts and shared Drive structure,DexTech,2026-11-06,Not started,Everyone logs in with MFA,
-1 Back office,Purchase and configure dispatch software; test trip end to end,DexTech + Ezra,2026-11-11,Not started,Test trip booked assigned completed exported,
-1 Back office,Connect broker trip feed to dispatch,DexTech,2026-11-13,Not started,Tomorrow's broker trips import without retyping,
-1 Back office,"BambooHR: onboarding checklist, documents, cert reminders",DexTech,2026-11-11,Not started,Test hire completes onboarding,
-1 Back office,ADP payroll and QuickBooks Online configured,DexTech + Ezra,2026-11-13,Not started,Test payroll and test invoice run,
-1 Back office,Phone Phase 1 live with menu and after-hours routing,DexTech,2026-11-11,Not started,Test calls route correctly,
+1 Back office,"Bridge for people and vehicles: onboarding checklist and cert tracker sheet, inspection and incident Google Forms",DexTech,2026-11-06,Not started,Test hire completes checklist,Retired Dec 4
 1 Back office,"Hire Waleed: agreement, HIPAA training, role charter, access",Ezra + DexTech,2026-11-09,Not started,Waleed closes a test trip and sends test EOD,
+1 Back office,"Bambi live as dispatch bridge: vehicles, levels of service, rate card, standing orders, driver app, broker trip feed",DexTech + Ezra,2026-11-11,Not started,Test trip end to end; broker trips import without retyping,Broker-required system
+1 Back office,Phone bridge live on RingCentral or Dialpad with BAA and menu,DexTech,2026-11-11,Not started,Test calls route correctly,Ports to Twilio in Sprint 3
+1 Back office,ADP payroll and QuickBooks Online configured,DexTech + Ezra,2026-11-13,Not started,Test payroll and test invoice run,
 1 Back office,Draft seven SOPs v1,DexTech (Ezra reviews),2026-11-13,Not started,SOP folder complete,
+1 Back office,"Sprint 0: HIPAA-eligible hosting with BAA, data model, auth, CI, empty Ops Hub",DexTech,2026-11-13,Not started,Ezra and Waleed log in with MFA,
+1 Back office,Collect broker acceptance criteria for a custom dispatch system (D8),Ezra,2026-11-13,Not started,Written criteria from each broker rep,Becomes dispatch module spec
 2 Hiring,Job posts live and applicant tracker set up,Waleed (Ezra approves),2026-11-04,Not started,Posts live on Indeed and local groups,Referral bonus after 90 days
 2 Hiring,Screening calls and interviews,Waleed + Ezra,2026-11-18,Not started,6 to 8 interviews completed,
 2 Hiring,"Offers: 1 FT wheelchair, 1 PT wheelchair, 2 FT ambulatory",Ezra,2026-11-18,Not started,Signed offers,
@@ -24,7 +25,12 @@ Phase,Task,Owner,Due,Status,Done when,Notes
 3 Relaunch,Weekend shifts start,Waleed,2026-12-05,Not started,Saturday trips run,
 3 Relaunch,Full 7-day operation with on-call rotation,Ezra,2026-12-14,Not started,Two consecutive 7-day weeks,
 3 Relaunch,Phase 3 review and fix list,Ezra + DexTech + Waleed,2026-12-18,Not started,Fix list in tracker,
-4 Run without Ezra,Weekly KPI dashboard from dispatch export,DexTech,2026-12-23,Not started,Ezra reads it Monday mornings,
-4 Run without Ezra,Phone Phase 2: AI voice agent with ETA lookup,DexTech,2027-01-15,Not started,80% of ETA calls resolved without a human,Twilio with BAA
+4 Run without Ezra,"Sprint 1: Ops Hub core, People and compliance, Vehicles and safety, Daily operations dashboard",DexTech,2026-12-04,Not started,Drivers onboarded in platform; EOD report generated from Bambi export,Bridges retired
+4 Run without Ezra,Sprint 2: Billing and payments module with QuickBooks and ADP integration,DexTech,2026-12-31,Not started,December trips reconciled and billed in platform,
+4 Run without Ezra,Quarterly compliance calendar with reminders,Waleed,2027-01-15,Not started,Reminders firing from the People and compliance module,
 4 Run without Ezra,Second part-time dispatcher or on-call backup,Ezra,2027-01-29,Not started,Coverage calendar has no gaps,
-4 Run without Ezra,Quarterly compliance calendar with reminders,Waleed,2027-01-15,Not started,Reminders firing from BambooHR and Calendar,
+4 Run without Ezra,Sprint 3: Twilio port and AI voice agent with ETA lookup,DexTech,2027-01-29,Not started,80% of ETA calls resolved without a human,Twilio with BAA
+5 Replace Bambi,Dispatch module spec from broker criteria,DexTech (Ezra signs off),2027-01-29,Not started,Spec signed off,
+5 Replace Bambi,Sprint 4: dispatch and driver app built,DexTech,2027-03-13,Not started,"Internal test trips with GPS, signatures, broker file export",
+5 Replace Bambi,Broker approval and two-week parallel run with Bambi,Ezra + DexTech + Waleed,2027-03-27,Not started,Approval in writing; parallel data matches,
+5 Replace Bambi,Cutover to Nuezra Dispatch; cancel Bambi,DexTech,2027-03-31,Not started,One week on Nuezra Dispatch with no fallback,
