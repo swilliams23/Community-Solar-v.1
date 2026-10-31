@@ -78,7 +78,7 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
   <p class="eyebrow">Nuezra Transportation</p>
   <h1>Operating Plan: relaunch and run it remotely</h1>
   <p class="lede">A single plan for resuming non-emergency medical transportation (NEMT) trips, hiring four drivers, standing up a remote dispatcher, and building the Nuezra Operations Platform so the day runs without every task going through the owner.</p>
-  <p class="meta">Prepared October 30, 2026 for Ezra Warrington by DexTech Solutions. Updated October 31. Phase dates run from November 2 to March 31.</p>
+  <p class="meta">Prepared October 30, 2026 for Ezra Warrington by DexTech Solutions. Updated October 31. Phase dates run from November 2 to April 3.</p>
   <div class="goal"><strong>Goal.</strong> By mid-December Nuezra runs trips 7 days a week, a remote dispatcher/admin runs the day, every system has one job, and Ezra oversees from a daily report instead of a phone that never stops.</div>
   <div class="goal"><strong>Build approach.</strong> DexTech builds the Nuezra Operations Platform. Bambi, which Ezra's brokers require, runs dispatch as a bridge until the custom dispatch module passes broker review. QuickBooks and ADP stay as integrated services.</div>
   <ul class="roles">
@@ -121,7 +121,7 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
 <tr class="odd">
 <td>D1</td>
 <td>Dispatch system for relaunch</td>
-<td>Resolved Oct&nbsp;30: Ezra confirmed brokers require Bambi or a comparable recognized trip logistics system. Bambi is the bridge from relaunch until the custom dispatch module is approved.</td>
+<td>Resolved Oct&nbsp;30: Ezra confirmed brokers require Bambi or a comparable recognized trip logistics system. Bambi is the bridge from relaunch until the custom dispatch module is approved. Build and approval plan in the companion document.</td>
 <td>Trips cannot start without a broker-accepted system; building one first would delay relaunch by months.</td>
 </tr>
 <tr class="even">
@@ -227,7 +227,7 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
 <td>Dispatch and driver app</td>
 <td>Trip intake, broker trip import, standing orders, rate card quotes, routing and assignment, live board, driver app with GPS statuses, signatures, odometer, will-call handling; built to the broker criteria from D8</td>
 <td>Bambi</td>
-<td>Sprint 4, build to Mar&nbsp;13; parallel run and broker review; cutover target Mar&nbsp;31</td>
+<td>Spec Dec&nbsp;18; build Jan&nbsp;4 to Mar&nbsp;5; hardening to Mar&nbsp;13; parallel run and broker approval to Mar&nbsp;27; cutover Apr&nbsp;3 (see the Dispatch Build and Approval Plan)</td>
 </tr>
 </tbody>
 </table></div>
@@ -269,9 +269,9 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
 </tr>
 <tr class="odd">
 <td>Sprint 4</td>
-<td>Feb&nbsp;1 to Mar&nbsp;13</td>
-<td>Dispatch and driver app; submit to brokers; two-week parallel run with Bambi</td>
-<td>Broker approval in writing; cutover Mar&nbsp;31</td>
+<td>Jan&nbsp;4 to Mar&nbsp;13</td>
+<td>Dispatch and driver app (spec and design run Nov&nbsp;23 to Dec&nbsp;18 alongside Sprints 1 and 2); hardening; then approval and parallel run to Mar&nbsp;27</td>
+<td>Broker approval in writing; cutover Apr&nbsp;3</td>
 </tr>
 </tbody>
 </table></div>
@@ -524,7 +524,8 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
 </tr>
 </tbody>
 </table></div>
-<h3 id="phase-5-replace-bambi-with-nuezra-dispatch-feb-1-to-mar-31-2027-owner-s-with-e">Phase 5: Replace Bambi with Nuezra Dispatch (Feb&nbsp;1 to Mar&nbsp;31, 2027). Owner: S, with E</h3>
+<h3 id="phase-5-replace-bambi-with-nuezra-dispatch-nov-2-to-apr-3-2027-owner-s-with-e">Phase 5: Replace Bambi with Nuezra Dispatch (Nov&nbsp;2 to Apr&nbsp;3, 2027). Owner: S, with E</h3>
+<p>Detailed in the companion document, Nuezra Dispatch: Build and Broker Approval Plan.</p>
 <div class="tbl"><table>
 <thead>
 <tr class="header">
@@ -536,31 +537,50 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
 </thead>
 <tbody>
 <tr class="odd">
-<td>Broker acceptance criteria collected (D8) and turned into the dispatch module spec</td>
-<td>E collects, S writes</td>
-<td>Nov&nbsp;13 (criteria), Jan&nbsp;29 (spec)</td>
-<td>Spec signed off by E</td>
+<td>Discovery: broker acceptance criteria collected (D8), Waleed's Bambi workflow journal, driver interviews</td>
+<td>E + W + S</td>
+<td>Nov&nbsp;20</td>
+<td>Criteria from every broker in writing</td>
 </tr>
 <tr class="even">
-<td>Sprint 4: dispatch and driver app built</td>
-<td>S</td>
-<td>Mar&nbsp;13</td>
-<td>Internal test trips run end to end with GPS, signatures, broker file export</td>
+<td>Spec and design: product requirements, criteria matrix, wireframes, architecture, security plan; brokers previewed</td>
+<td>S, E signs off</td>
+<td>Dec&nbsp;18</td>
+<td>PRD signed; broker contacts named</td>
 </tr>
 <tr class="odd">
-<td>Submit to brokers for approval; two-week parallel run with Bambi</td>
-<td>E + S + W</td>
-<td>Mar&nbsp;27</td>
-<td>Approval in writing; parallel-run trip data matches</td>
+<td>Core build: trip intake, broker import, standing orders, dispatch board, assignment, live map, audit log, exports</td>
+<td>S</td>
+<td>Feb&nbsp;12</td>
+<td>W runs tomorrow's schedule in shadow mode</td>
 </tr>
 <tr class="even">
-<td>Cutover and Bambi cancelled</td>
+<td>Driver app and integrations: iOS and Android app, GPS and events, signatures, offline sync, QuickBooks, ADP, broker export files</td>
 <td>S</td>
-<td>Mar&nbsp;31</td>
-<td>All trips on Nuezra Dispatch for one week with no fallback</td>
+<td>Mar&nbsp;5</td>
+<td>Two drivers complete real private-pay trips on the app</td>
+</tr>
+<tr class="odd">
+<td>Hardening: HIPAA risk assessment, penetration test, load test, app store approval, user acceptance testing</td>
+<td>S</td>
+<td>Mar&nbsp;13</td>
+<td>Findings fixed; UAT signed by E and W</td>
+</tr>
+<tr class="even">
+<td>Broker approval and parallel run (shadow, private-pay pilot, broker parallel)</td>
+<td>E + S + W</td>
+<td>Mar&nbsp;27</td>
+<td>Written approval; parity criteria met</td>
+</tr>
+<tr class="odd">
+<td>Cutover; Bambi read-only, then cancelled Apr&nbsp;30</td>
+<td>S + W</td>
+<td>Apr&nbsp;3</td>
+<td>One week on Nuezra Dispatch with no fallback</td>
 </tr>
 </tbody>
 </table></div>
+<p>---|---|---|---| | Broker acceptance criteria collected (D8) and turned into the dispatch module spec | E collects, S writes | Nov&nbsp;13 (criteria), Jan&nbsp;29 (spec) | Spec signed off by E | | Sprint 4: dispatch and driver app built | S | Mar&nbsp;13 | Internal test trips run end to end with GPS, signatures, broker file export | | Submit to brokers for approval; two-week parallel run with Bambi | E + S + W | Mar&nbsp;27 | Approval in writing; parallel-run trip data matches | | Cutover and Bambi cancelled | S | Mar&nbsp;31 | All trips on Nuezra Dispatch for one week with no fallback |</p>
 <hr />
 <h2 id="4-who-owns-what-accountability-map">4. Who owns what (accountability map)</h2>
 <div class="tbl"><table>
@@ -651,7 +671,7 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
 <tbody>
 <tr class="odd">
 <td>Riders, trips, authorizations, driver status, GPS, signatures, timestamps</td>
-<td>Bambi (bridge), then Nuezra Dispatch module (cutover Mar&nbsp;31)</td>
+<td>Bambi (bridge), then Nuezra Dispatch module (cutover Apr&nbsp;3)</td>
 <td>W, D (via app)</td>
 <td>E, S</td>
 <td>The only place rider PHI lives. BAA with Bambi; platform hosted under a BAA.</td>

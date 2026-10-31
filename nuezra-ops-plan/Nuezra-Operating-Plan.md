@@ -23,7 +23,7 @@ These change the plan below, so settle them in the first week. Suggested answers
 
 | # | Decision | Suggested answer | Why it matters |
 |---|---|---|---|
-| D1 | Dispatch system for relaunch | Resolved Oct 30: Ezra confirmed brokers require Bambi or a comparable recognized trip logistics system. Bambi is the bridge from relaunch until the custom dispatch module is approved. | Trips cannot start without a broker-accepted system; building one first would delay relaunch by months. |
+| D1 | Dispatch system for relaunch | Resolved Oct 30: Ezra confirmed brokers require Bambi or a comparable recognized trip logistics system. Bambi is the bridge from relaunch until the custom dispatch module is approved. Build and approval plan in the companion document. | Trips cannot start without a broker-accepted system; building one first would delay relaunch by months. |
 | D2 | Build vs. buy | Resolved: DexTech builds the Nuezra Operations Platform (people, compliance, vehicles, billing tracking, reporting, phone agent, then dispatch and driver app). Buy only QuickBooks, ADP, telephony carrier, background checks, and e-signature. | One system, owned by Nuezra, shaped to how Nuezra runs. |
 | D8 | Broker acceptance criteria for a custom dispatch system | Ezra asks each broker rep in writing what "Bambi or an alike system" must provide (GPS breadcrumbs, timestamp capture, signature, trip file format, API or portal upload, audit log, HIPAA attestation). Due Nov 13. | Defines the dispatch module's spec and whether cutover from Bambi is realistic. |
 | D9 | Technology stack and hosting | DexTech proposes: web app plus driver mobile app, HIPAA-eligible cloud with a signed BAA, Twilio under a BAA for voice and SMS, QuickBooks and ADP APIs. Confirm by Nov 6. | Hosting choice drives HIPAA posture and cost. |
@@ -47,7 +47,7 @@ One login for Ezra, Waleed, and drivers. Modules ship in the order the business 
 | Daily operations dashboard | Reads trip data from Bambi exports (later from the dispatch module): trips, on-time rate, exceptions, unassigned tomorrow, EOD report auto-drafted for Waleed to confirm | Manual EOD email | Sprint 1, Dec 4 |
 | Billing and payments | Trip reconciliation against authorizations, claim status tracker per broker, private-pay invoices pushed to QuickBooks, remittance posting, denial queue, AR aging, pay-period hours and mileage export to ADP | Spreadsheets plus QuickBooks by hand | Sprint 2, Dec 31 |
 | Phone and AI agent | Twilio number, menu, call recording, AI voice agent that verifies callers, reads ETAs from dispatch, takes bookings as pending trips, transfers quotes to Waleed, logs transcripts | RingCentral or Dialpad menu | Sprint 3, Jan 29 |
-| Dispatch and driver app | Trip intake, broker trip import, standing orders, rate card quotes, routing and assignment, live board, driver app with GPS statuses, signatures, odometer, will-call handling; built to the broker criteria from D8 | Bambi | Sprint 4, build to Mar 13; parallel run and broker review; cutover target Mar 31 |
+| Dispatch and driver app | Trip intake, broker trip import, standing orders, rate card quotes, routing and assignment, live board, driver app with GPS statuses, signatures, odometer, will-call handling; built to the broker criteria from D8 | Bambi | Spec Dec 18; build Jan 4 to Mar 5; hardening to Mar 13; parallel run and broker approval to Mar 27; cutover Apr 3 (see the Dispatch Build and Approval Plan) |
 
 What stays bought: QuickBooks Online (books, tax), ADP (payroll and tax filings), Twilio (carrier and voice AI transport), a background check and MVR vendor, an e-signature service, and Bambi until cutover.
 
@@ -59,7 +59,7 @@ Sprint plan (DexTech, S):
 | Sprint 1 | Nov 16 to Dec 4 | Ops Hub core, People and compliance, Vehicles and safety, Daily operations dashboard | All four drivers onboarded through the platform; EOD report generated from Bambi export |
 | Sprint 2 | Dec 7 to Dec 31 | Billing and payments module with QuickBooks and ADP integration | December trips reconciled and billed in the platform |
 | Sprint 3 | Jan 4 to Jan 29 | Phone and AI agent on Twilio | 80% of ETA calls resolved without a human |
-| Sprint 4 | Feb 1 to Mar 13 | Dispatch and driver app; submit to brokers; two-week parallel run with Bambi | Broker approval in writing; cutover Mar 31 |
+| Sprint 4 | Jan 4 to Mar 13 | Dispatch and driver app (spec and design run Nov 23 to Dec 18 alongside Sprints 1 and 2); hardening; then approval and parallel run to Mar 27 | Broker approval in writing; cutover Apr 3 |
 
 Rule for every module: Waleed uses it for a week before Ezra is asked to; nothing ships without the SOP that goes with it.
 
@@ -124,10 +124,21 @@ Dates assume today is Fri Oct 30, 2026. Compliance work is already in motion and
 | Second part-time dispatcher or on-call backup so Waleed is not a single point of failure | E | Jan 29 | Coverage calendar has no gaps |
 | Quarterly compliance calendar (insurance renewals, certs, vehicle inspections, broker re-credentialing) | W | Jan 15 | Reminders firing from the People and compliance module |
 
-### Phase 5: Replace Bambi with Nuezra Dispatch (Feb 1 to Mar 31, 2027). Owner: S, with E
+### Phase 5: Replace Bambi with Nuezra Dispatch (Nov 2 to Apr 3, 2027). Owner: S, with E
+
+Detailed in the companion document, Nuezra Dispatch: Build and Broker Approval Plan.
 
 | Task | Owner | Due | Done when |
 |---|---|---|---|
+| Discovery: broker acceptance criteria collected (D8), Waleed's Bambi workflow journal, driver interviews | E + W + S | Nov 20 | Criteria from every broker in writing |
+| Spec and design: product requirements, criteria matrix, wireframes, architecture, security plan; brokers previewed | S, E signs off | Dec 18 | PRD signed; broker contacts named |
+| Core build: trip intake, broker import, standing orders, dispatch board, assignment, live map, audit log, exports | S | Feb 12 | W runs tomorrow's schedule in shadow mode |
+| Driver app and integrations: iOS and Android app, GPS and events, signatures, offline sync, QuickBooks, ADP, broker export files | S | Mar 5 | Two drivers complete real private-pay trips on the app |
+| Hardening: HIPAA risk assessment, penetration test, load test, app store approval, user acceptance testing | S | Mar 13 | Findings fixed; UAT signed by E and W |
+| Broker approval and parallel run (shadow, private-pay pilot, broker parallel) | E + S + W | Mar 27 | Written approval; parity criteria met |
+| Cutover; Bambi read-only, then cancelled Apr 30 | S + W | Apr 3 | One week on Nuezra Dispatch with no fallback |
+
+---|---|---|---|
 | Broker acceptance criteria collected (D8) and turned into the dispatch module spec | E collects, S writes | Nov 13 (criteria), Jan 29 (spec) | Spec signed off by E |
 | Sprint 4: dispatch and driver app built | S | Mar 13 | Internal test trips run end to end with GPS, signatures, broker file export |
 | Submit to brokers for approval; two-week parallel run with Bambi | E + S + W | Mar 27 | Approval in writing; parallel-run trip data matches |
@@ -158,7 +169,7 @@ Rule: every task in the tracker has exactly one owner. A backup can act, but the
 
 | Information | System of record | Who writes | Who reads | Notes |
 |---|---|---|---|---|
-| Riders, trips, authorizations, driver status, GPS, signatures, timestamps | Bambi (bridge), then Nuezra Dispatch module (cutover Mar 31) | W, D (via app) | E, S | The only place rider PHI lives. BAA with Bambi; platform hosted under a BAA. |
+| Riders, trips, authorizations, driver status, GPS, signatures, timestamps | Bambi (bridge), then Nuezra Dispatch module (cutover Apr 3) | W, D (via app) | E, S | The only place rider PHI lives. BAA with Bambi; platform hosted under a BAA. |
 | Broker trip assignments | Broker portal → dispatch import | W | W | Never re-key; import or integrate. |
 | Employee files, onboarding checklist, certifications and expirations, PTO, policies acknowledgments | Nuezra People and compliance module (bridge: shared sheet until Dec 4) | W, D | E | Expiration reminders 60/30/7 days out. |
 | Hours, pay rates, payroll, tax filings | ADP | E (W preps hours from dispatch export) | E | Export approved hours from dispatch, import to ADP. |

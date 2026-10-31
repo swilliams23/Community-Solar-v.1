@@ -30,7 +30,15 @@ Phase,Task,Owner,Due,Status,Done when,Notes
 4 Run without Ezra,Quarterly compliance calendar with reminders,Waleed,2027-01-15,Not started,Reminders firing from the People and compliance module,
 4 Run without Ezra,Second part-time dispatcher or on-call backup,Ezra,2027-01-29,Not started,Coverage calendar has no gaps,
 4 Run without Ezra,Sprint 3: Twilio port and AI voice agent with ETA lookup,DexTech,2027-01-29,Not started,80% of ETA calls resolved without a human,Twilio with BAA
-5 Replace Bambi,Dispatch module spec from broker criteria,DexTech (Ezra signs off),2027-01-29,Not started,Spec signed off,
-5 Replace Bambi,Sprint 4: dispatch and driver app built,DexTech,2027-03-13,Not started,"Internal test trips with GPS, signatures, broker file export",
-5 Replace Bambi,Broker approval and two-week parallel run with Bambi,Ezra + DexTech + Waleed,2027-03-27,Not started,Approval in writing; parallel data matches,
-5 Replace Bambi,Cutover to Nuezra Dispatch; cancel Bambi,DexTech,2027-03-31,Not started,One week on Nuezra Dispatch with no fallback,
+5 Replace Bambi,"Discovery: broker criteria (D8), Waleed workflow journal, driver interviews, data model v1",Ezra + Waleed + DexTech,2026-11-20,Not started,Criteria from every broker in writing,Dispatch plan Stage 0
+5 Replace Bambi,Apple Developer and Google Play accounts created; business verification started,DexTech,2026-11-20,Not started,Both accounts verified,Long lead time
+5 Replace Bambi,"Spec and design: PRD, criteria matrix, wireframes, architecture, security plan; broker preview",DexTech (Ezra signs off),2026-12-18,Not started,PRD signed; broker test contacts named,Stage 1
+5 Replace Bambi,Staffing decision: solo or second developer,DexTech,2026-12-18,Not started,Decision recorded; dates adjusted if solo,
+5 Replace Bambi,"Core build: intake, broker import, standing orders, board, assignment, live map, audit log, exports",DexTech,2027-02-12,Not started,Waleed runs tomorrow in shadow mode,Stage 2
+5 Replace Bambi,Shadow run: assign in both systems for two weeks,Waleed + DexTech,2027-02-26,Not started,Assignments match 100%,Parallel run step A
+5 Replace Bambi,"Driver app and integrations: GPS, events, signatures, offline sync, QuickBooks, ADP, broker exports",DexTech,2027-03-05,Not started,Two drivers complete real private-pay trips on the app,Stage 3
+5 Replace Bambi,"Hardening: HIPAA risk assessment, penetration test, load test, app store approval, UAT",DexTech,2027-03-13,Not started,Findings fixed; UAT signed by Ezra and Waleed,Stage 4
+5 Replace Bambi,Private-pay pilot on the Nuezra app,Ezra + DexTech,2027-03-13,Not started,50+ trips with full evidence; zero lost events,Parallel run step B
+5 Replace Bambi,Broker submission package delivered and broker parallel run,Ezra + DexTech + Waleed,2027-03-27,Not started,Written approval; parity within tolerances,Parallel run step C
+5 Replace Bambi,Cutover week; Bambi read-only,DexTech + Waleed,2027-04-03,Not started,One week with no fallback,
+5 Replace Bambi,Final Bambi export and cancellation,DexTech,2027-04-30,Not started,Records archived; subscription cancelled,
